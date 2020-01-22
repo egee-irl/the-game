@@ -2,9 +2,14 @@
   "name": "the-game",
   "version": "0.1.0",
   "description": "",
-  "main": "game.js",
+  "main": "./dist/game.js",
   "scripts": {
-    "start": "node node_modules/.bin/http-server ./public"
+    "start": "node ./bin/run",
+    "restart": "npm run rebuild && npm start",
+    "rebuild": "./node_modules/.bin/cake rebuild",
+    "build": "./node_modules/.bin/cake build",
+    "clean": "./node_modules/.bin/cake clean",
+    "test": "npm run rebuild && ./node_modules/mocha/bin/mocha --require coffeescript/register test/**/*.coffee"
   },
   "repository": {
     "type": "git",
@@ -18,5 +23,10 @@
   "homepage": "https://github.com/egee-irl/the-game#readme",
   "dependencies": {
     "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "coffeelint": "^2.1.0",
+    "coffeescript": "^2.4.1"
   }
 }
