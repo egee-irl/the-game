@@ -46,8 +46,6 @@ create () ->
   diamonds = game.add.group()
   diamonds.enableBody = true
 
-  # menu i + 1, dish for dish, i in courses
-
   i = 0
   while i < 12
     diamond = diamonds.create(i * 70, 0, 'diamond')
