@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/game.js",
   "scripts": {
-    "start": "node ./bin/run",
+    "start": "node node_modules/.bin/http-server ./public",
     "restart": "npm run rebuild && npm start",
     "rebuild": "./node_modules/.bin/cake rebuild",
     "build": "./node_modules/.bin/cake build",
