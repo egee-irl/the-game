@@ -1,2 +1,3 @@
 # the-game
-A game for prototyping ideas with
+
+A port of [jumper](https://github.com/egee-irl/jumper) to CofeeScript & Phaser 3
