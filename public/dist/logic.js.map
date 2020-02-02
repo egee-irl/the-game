@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "logic.js",
+  "sourceRoot": "..",
+  "sources": [
+    "src/logic.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,cAAA,CAAe,QAAA,CAAA,CAAA;IACb,OAAO,CAAC,IAAR,CAAA;IACA,KAAA,IAAS;WACT,SAAS,CAAC,IAAV,GAAiB,SAAA,GAAY;EAHhB,CAAf;;EAIA,MAAM,CAAC,OAAP,GAAiB;AAJjB",
+  "sourcesContent": [
+    "CollectDiamond () ->\n  diamond.kill()\n  score += 10\n  scoreText.text = 'Score: ' + score\nmodule.exports = CollectDiamond"
+  ]
+}
