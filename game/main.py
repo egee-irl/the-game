@@ -51,13 +51,14 @@ class Game(ShowBase):
         frameTime = globalClock.getFrameTime()
 
         if is_down(self.keyMap["forward"]):
-            self.pandaActor.setPos(self.pandaActor.getPos() + Vec3(0, 0.002*frameTime, 0))
+            # self.pandaActor.
+            self.pandaActor.setPos(self.pandaActor.getPos() + Vec3(0, 0.002, 0))
         if is_down(self.keyMap["backward"]):
-            self.pandaActor.setPos(self.pandaActor.getPos() + Vec3(0, -0.002*frameTime, 0))
+            self.pandaActor.setPos(self.pandaActor.getPos() + Vec3(0, -0.002, 0))
         if is_down(self.keyMap["left"]):
-            self.pandaActor.setH(self.pandaActor.getH() + 0.3)
+            self.pandaActor.setH(self.pandaActor.getH() + 0.1)
         if is_down(self.keyMap["right"]):
-            self.pandaActor.setH(self.pandaActor.getH() + -0.3)
+            self.pandaActor.setH(self.pandaActor.getH() + -0.1)
 
         return task.cont
 
