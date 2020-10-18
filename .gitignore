@@ -1,3 +1,5 @@
 .vscode
 .import
-node_modules/
+__pycache__
+game.egg-info
+Models
