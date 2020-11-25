@@ -46,9 +46,14 @@ func _process(delta):
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.disabled = false
 
 func _on_Player_body_entered(body):
 	hide()
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
+
+func game_over():
+	# This gets sibling nodes
+	get_parent().get_node("ScoreTimer").stop()
+	get_parent().get_node("MobTimer").stop()	
