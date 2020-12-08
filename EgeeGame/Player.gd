@@ -1,59 +1,33 @@
-extends Area2D
-signal hit
+extends KinematicBody2D
 
-export var speed = 400
-var screen_size
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (int) var speed = 1200
+export (int) var jump_speed = -1800
+export (int) var gravity = 4000
+
+var velocity = Vector2.ZERO
+
+func get_input():
+	velocity.x = 0
+	if Input.is_action_pressed("walk_right"):
+		velocity.x += speed
+	if Input.is_action_pressed("walk_left"):
+		velocity.x -= speed
+
+func _physics_process(delta):
+	get_input()
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity, Vector2.UP)
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = jump_speed
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
-	hide()
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
-	
-	if velocity.x != 0:
-		$AnimatedSprite.animation = "walk"
-		#$AnimatedSprite.flip_v = false
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite.animation = "up"
-		$AnimatedSprite.flip_v = velocity.y > 0
-	
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
-
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
-
-func _on_Player_body_entered(body):
-	hide()
-	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true)
-
-func game_over():
-	# This gets sibling nodes
-	get_parent().get_node("ScoreTimer").stop()
-	get_parent().get_node("MobTimer").stop()	
+#func _process(delta):
+#	pass
