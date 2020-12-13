@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 234.932, 24.0271 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.529755, 63.038 )
+cell_tile_origin = 2
+tile_data = PoolIntArray( 655360, 1, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 2, 0 )
