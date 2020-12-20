@@ -9,6 +9,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jumping",
@@ -18,16 +23,10 @@ animations = [ {
 "loop": true,
 "name": "standing",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 51.6695
-height = 0.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 44.8882, 55.8578 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 4 )
@@ -37,5 +36,5 @@ frames = SubResource( 1 )
 animation = "standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.66971, 2.00226 )
+position = Vector2( 5.34244, 1.29436 )
 shape = SubResource( 2 )
