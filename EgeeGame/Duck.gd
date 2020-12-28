@@ -8,6 +8,8 @@ var velocity = Vector2.ZERO
 
 func get_input():
 	velocity.x = 0
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
 	if Input.is_action_pressed("ui_left"):
