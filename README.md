@@ -1,6 +1,8 @@
 # Egee's Sandbox
 
-Welcome to the Sandbox!
+Welcome to the Egee Sandbox repository!
+
+![](.github/egee.png)
 
 In this game you play a small 8-bit Egee sprite and wander around an NES inspired world testing out different game mechanics. The game is currently in Alpha and will reach perpetual beta once the abilities and enemies are implemented.
 
