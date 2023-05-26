@@ -1,4 +1,4 @@
-# Egee's Sandboox
+# Egee's Sandbox
 
 Welcome to the Sandbox!
 
