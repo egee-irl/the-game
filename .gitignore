@@ -1,5 +1,6 @@
 .vscode
 .import
+bin/*
 __pycache__
 game.egg-info
 Models
