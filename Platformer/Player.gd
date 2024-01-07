@@ -52,7 +52,7 @@ func player_tick(delta):
 	else:
 		get_node("PlayerSprite").play("stand")
 
-	# If he's anywhere other than on the floor, he is falling!
+	# If he's anywhere other than on the floor, he is falling
 	if !is_on_floor():
 		get_node("PlayerSprite").play("jump")
 
@@ -96,7 +96,7 @@ func _on_Hitbox_body_entered(body):
 #######################
 
 func _ready():
-	get_node(".").position = get_spawn_node("Spawn").position
+	get_node(".").position = get_spawn_node("Spawn1").position
 
 func _physics_process(delta):
 	player_tick(delta)
