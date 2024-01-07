@@ -5,3 +5,4 @@ Platformer/bin/*
 __pycache__
 game.egg-info
 Models
+Assets/
