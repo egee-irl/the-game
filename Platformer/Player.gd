@@ -96,7 +96,7 @@ func _on_Hitbox_body_entered(body):
 #######################
 
 func _ready():
-	get_node(".").position = get_spawn_node("Spawn1").position
+	get_node(".").position = get_spawn_node("Spawn").position
 
 func _physics_process(delta):
 	player_tick(delta)
